@@ -50,7 +50,6 @@ class Teque {
         for (int i = 0; i < posisjonMidten; i++) {
             temp = temp.hentNeste();
         }
-        1 1 1 1 1 1
    }
 
    public void get() {
