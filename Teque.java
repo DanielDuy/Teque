@@ -38,10 +38,15 @@ class Teque {
    }
 
    public void push_front(int pVerdi) {
-        Node temp = new Node(pVerdi);
-        temp.setNeste(hode);
-        hode = temp;
-        lengde++;
+       if (hode == null) {
+           hode = new Node(pVerdi);
+
+       } else {
+           Node temp = new Node(pVerdi);
+           temp.setNeste(hode);
+           hode = temp;
+       }
+       lengde++;
    }
 
    public void push_middle(int pVerdi) {
