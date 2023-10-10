@@ -65,6 +65,7 @@ class Teque {
         lengde++;
    }
 
+   // Obs! Første posisjon er 1.
    public int get(int pPosisjon) {
        Node temp = hode;
        for (int i = 1; i < pPosisjon; i++) {
