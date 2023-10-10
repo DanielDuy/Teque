@@ -1,5 +1,5 @@
 class Teque {
-   class Node {
+    class Node {
        Node neste;
        int verdi;
 
@@ -60,8 +60,12 @@ class Teque {
         lengde++;
    }
 
-   public void get() {
-
+   public int get(int pPosisjon) {
+       Node temp = hode;
+       for (int i = 1; i < pPosisjon; i++) {
+           temp = temp.hentNeste();
+       }
+       return temp.hentVerdi();
    }
 
    public void printQueue() {
@@ -71,5 +75,13 @@ class Teque {
            temp = temp.hentNeste();
        }
        System.out.println(temp.hentVerdi());
+   }
+
+   public int hent() {
+       Node temp = hode;
+       hode = temp.hentNeste();
+       temp.setNeste(null);
+       lengde--;
+       return temp.hentVerdi();
    }
 }
