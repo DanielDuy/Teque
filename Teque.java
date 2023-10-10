@@ -44,12 +44,20 @@ class Teque {
         lengde++;
    }
 
-   public void push_middle() {
+   public void push_middle(int pVerdi) {
         int posisjonMidten = (lengde+1)/2;
-        Node temp = hode;
-        for (int i = 0; i < posisjonMidten; i++) {
-            temp = temp.hentNeste();
+
+        Node tempForrige = hode;
+        for (int i = 1; i < posisjonMidten; i++) {
+            tempForrige = tempForrige.hentNeste();
         }
+
+        Node tempNeste = tempForrige.hentNeste();
+        Node nyNode = new Node(pVerdi);
+        tempForrige.setNeste(nyNode);
+        nyNode.setNeste(tempNeste);
+
+        lengde++;
    }
 
    public void get() {
